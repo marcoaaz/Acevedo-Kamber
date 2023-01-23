@@ -5,6 +5,6 @@ If using this code (or snippets), please cite the corresponding authors below an
 Acevedo Zamora, M.A.; Kamber, B.S. Petrographic Microscopy with Ray Tracing and Segmentation from Multi-Angle Polarisation Whole-Slide Images. Minerals 2023, 13, 156. https://doi.org/10.3390/min13020156 
 
 Workflow:
-![Figure_05](https://user-images.githubusercontent.com/61703106/213952084-af0cc667-3b8f-4cc6-be7c-dbe6c17b4494.jpg | width=500)
+<img src="https://user-images.githubusercontent.com/61703106/213952990-e21d25d1-d3eb-430f-8b87-fbffcbb44cd5.jpg" width=70% height=70%>
 
 We specially thank the open-source bio-imaging community (https://forum.image.sc/) for the fundamental packages used within our pipeline. 
