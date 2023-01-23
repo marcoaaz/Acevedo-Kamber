@@ -9,5 +9,7 @@ Workflow:
 If using this code (or snippets), please cite the corresponding authors below and the open-source brain developers of the software used in recognition of their work. We specially thank the open-source bio-imaging community (https://forum.image.sc/) for the fundamental packages used within our pipeline. 
 
 Citation in MDPI and ACS Style:
+
+
 Acevedo Zamora, M.A.; Kamber, B.S. Petrographic Microscopy with Ray Tracing and Segmentation from Multi-Angle Polarisation Whole-Slide Images. Minerals 2023, 13, 156. https://doi.org/10.3390/min13020156 
 
