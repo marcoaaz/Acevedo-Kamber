@@ -1,0 +1,32 @@
+#Marco A. Acevedo Zamora
+https://au.mathworks.com/help/matlab/ref/regexp.html
+
+The mineral list in this document will be parsed in a MatLab script to merge minerals with similar spectra. The process is reversible by modifying the text after the last '=' and much faster than mergin spectral masks within AZtec v3.3 software.
+
+Option 1: The phases can be identified looking at the spectra within AZtec 'phase image - phases and spectra with miniquant (Landscape).pdf' report. 
+
+Option 2: Alternatively, the saved phase_map_rgb.tif (MatLab script) can be aligned with an optical microscopy scan and compared to obtain the rock-forming minerals. All exported AZtec mineral phase masks must have the same dimensions (WxH) and be perfectly aligned.
+
+For writing the user input (mergin criteria), follow the format below prior use of our phase mask exporting convention. The element/mineral order in the example below does not matter. Using the *.tif or *.tiff format is optional. The automatic parsing only recognizes [a-zA-Z_0-9] characters.
+ 
+"Mineral1: 1 ABC, 23 DEF.tif, 5 GHI.tif
+Mineral2: 6 JKL, 2 MNO
+.
+.
+."
+
+======Write recognizable minerals list========
+
+Quartz: 1 SiO, 20 SiO, Phase 16, 19 SiMgO
+Feldspar: 2 SiAlO
+Hornblende: 5 SiFeO
+Apatite: 4 CaPO
+Pyrite: 3 SFe
+Chalcopyrite: Phase 6
+Zircon: 7 ZrSiO
+Calcite: 8 CaO, 24 CaO
+Magnetite: 10 FeO
+C_Coating: Phase 11
+Ilmenite: Phase 12
+
+
