@@ -23,8 +23,7 @@ Brief description of functionalities:
    + paddingWSI.py = fills zeros the bottom and right sides of the WSI to match the size of tile-based ray-tracing WSI.
    + export_ometiff.py = stack WSIs from flat-images (input folder) to a multi-channel image pyramid (OME-TIFF).
    + concatenate_ometiff.py = concatenate greyscale images into multiband image pyramid (LZW compression) for QuPath.
-2. QuPath scripts (IntelliJ):
-   - qupathTileName_Patch_v2.m = rename tiles according to column-major order (importable to Fiji by Import Sequence>name sorting).
+2. QuPath scripts (IntelliJ):   
    - QuPath-Concatenate channels.groovy = produce an image overlay with multiple channels and considers image transformations and stain deconvolution.
    - Concatenate_test.groovy = concatenate 2 image pyramids in a project.
    - copy_annotations_to_stack.groovy = copy stack annotations to one layer (without redundancy)
