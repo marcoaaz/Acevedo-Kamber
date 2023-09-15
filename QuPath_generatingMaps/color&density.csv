@@ -1,0 +1,23 @@
+Mineral,MineralName,Density,R,G,B,Source
+Dol,Dolomite,2.84,102,204,255,
+Py,Pyrite,5.013,255,255,0,
+Qz,Quartz,2.65,0,128,255,
+Tet,Tetrathedrite,4.9,51,204,51,
+Sph,Sphalerite,4.096,255,0,128,
+Una,Unassigned,2.7,105,105,105,Generic
+Gn,Galena,7.58,153,102,255,
+Cpy,Chalcopyrite,4.35,255,128,0,
+Apy,Arsenopyrite,6.07,0,255,128,
+Apa,Apatite,3.1,128,0,255,
+Cas,Cassiterite,7,255,0,255,
+Cac,Calcite,2.7,102,100,255,
+Hm,Hematite,5.27,255,0,0,
+Gold,Native gold,19.3,255,255,0,
+Tit,Titanite,3.53,102,255,102,
+Zir,Zircon,4.71,204,51,153,
+Rut,Rutile,4.23,135,135,135,
+Mon,Monazite,5.15,102,0,255,
+Bis,Bismuthinite,7,200,200,230,
+Ank,Ankerite,3.05,204,102,0,
+Chl,Chlorite,2.832,51,102,0,HSC
+Ms,Muscovite,2.82,255,204,0,Internet
