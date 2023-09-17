@@ -1,5 +1,5 @@
 # Acevedo-Kamber
-The repository contains the scripts of the petrographic image analysis pipeline (Option A and Option B). The input can be multi-pol optical scans of a full thin-section that have been downloaded from OlyVIA (Olympus ASW) software via the local server access. 
+The repository contains the scripts of the petrographic image analysis pipeline (Option A and Option B). The input can be multi-pol optical scans of a full thin-section that have been downloaded from OlyVIA (Olympus ASW) software via the local server access. The images are acquired in a slide scanner microscope (Evident VS200). See the description is at https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/
 
 See the full description in Acevedo Zamora and Kamber (2023) Suplementary material 1. Citation in MDPI and ACS Style:
 
