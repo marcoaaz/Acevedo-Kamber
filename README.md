@@ -1,10 +1,13 @@
 # Acevedo-Kamber
-The repository contains the scripts of the petrographic image analysis pipeline (Option A and Option B). The input can be multi-pol optical scans of a full thin-section that have been downloaded from OlyVIA (Olympus ASW) software via the local server access. The images are acquired in a slide scanner microscope (Evident VS200). See the description is at https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/
+The repository contains the scripts of the petrographic image analysis pipeline (Option A and Option B). The input can be multi-pol optical scans of a full thin-section that have been downloaded from OlyVIA (Olympus ASW) software via the local server access. The images are acquired in a slide scanner microscope (Olympus VS200). The description is at https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/
 
-See the full description in Acevedo Zamora and Kamber (2023) Suplementary material 1. Citation in MDPI and ACS Style:
+See the documentation of the code in Acevedo Zamora and Kamber (2023) Suplementary material 1. If using part or all the code cite my work in (ACS Style):
 
 
 Acevedo Zamora, M.A.; Kamber, B.S. Petrographic Microscopy with Ray Tracing and Segmentation from Multi-Angle Polarisation Whole-Slide Images. Minerals 2023, 13, 156. https://doi.org/10.3390/min13020156 
+
+
+Do not forget to cite the corresponding authors of the open-source software (Bioformats, QuPath, VIPS). We specially thank the open-source bio-imaging community (https://forum.image.sc/) for the fundamental questions about the packages used within our pipeline. 
 
 
 Workflow:
@@ -12,8 +15,8 @@ Workflow:
 
 <img src="https://user-images.githubusercontent.com/61703106/213952990-e21d25d1-d3eb-430f-8b87-fbffcbb44cd5.jpg" width=70% height=70%>
 
-If using this code (or snippets), please cite the corresponding authors below and the open-source brain developers of the software used in recognition of their work. We specially thank the open-source bio-imaging community (https://forum.image.sc/) for the fundamental packages used within our pipeline. 
 
+Opening the QuPath optical mineral phase maps (exported in OME-TIFF) requires BioFormats MatLab Toolbox (https://www.openmicroscopy.org/bio-formats/downloads/). After download, the folder 'bfmatlab' needs to be extracted and added to the 'path' of the MatLab script 'qupathPhaseMap_v7.m'. Bioformats needs to be downloaded separately since it was not possible to upload the 'bioformats_package.jar' to GitHub since it is >25 MB. If still presenting issues for running the code, send me an email (after carefully reading the paper). Thanks.
 
 
 Brief description of functionalities:
@@ -56,7 +59,7 @@ Brief description of functionalities:
    - incrementalPCA.m = function that performs PCA on a large number of images.
    - aztecPhasemap_v1.m = script reconstructs AZtec phase map exports.
    - plotLogHistogramH2.m = function that follows plotLogHistogramH for plotting modal mineralogy with stacked bar histogram and was reformatted for petrography by Balz K.
-   - qupathPhaseMap_v5.m = interprets pixel classification maps from QuPath software in the MatLab environment and performs AIM, granulometry, and a few statistical analysis of the shapes.
+   - qupathPhaseMap_v7.m = interprets pixel classification maps from QuPath software in the MatLab environment and performs AIM, granulometry, and a few statistical analysis of the shapes.
 
 
 
