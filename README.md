@@ -1,7 +1,7 @@
 # Acevedo-Kamber
 The repository contains the scripts of the petrographic image analysis pipeline (Option A and Option B). The input can be multi-pol optical scans of a full thin-section that have been downloaded from OlyVIA (Olympus ASW) software via the local server access. The images are acquired in a slide scanner microscope (Olympus VS200). The description is at https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/
 
-See the documentation of the code in Acevedo Zamora and Kamber (2023) Suplementary material 1. If using part or all the code cite my work in (ACS Style):
+See the full documentation of the code in Acevedo Zamora and Kamber (2023) Suplementary material 1. If using part or all the code cite my work in (ACS Style):
 
 
 Acevedo Zamora, M.A.; Kamber, B.S. Petrographic Microscopy with Ray Tracing and Segmentation from Multi-Angle Polarisation Whole-Slide Images. Minerals 2023, 13, 156. https://doi.org/10.3390/min13020156 
@@ -62,9 +62,4 @@ Brief description of functionalities:
    - qupathPhaseMap_v7.m = interprets pixel classification maps from QuPath software in the MatLab environment and performs AIM, granulometry, and a few statistical analysis of the shapes.
 
 
-
-
-
-
-
-
+If there are issues or questions about the scripts and functions, please raise an issue. Thanks.
