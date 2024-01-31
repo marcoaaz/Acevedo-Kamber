@@ -1,4 +1,4 @@
-# Acevedo-Kamber
+# Semi-automated mineralogy using optical microscopy and pixel-based classification
 The repository contains the scripts of the petrographic image analysis pipeline (Option A and Option B). The input can be multi-pol optical scans of a full thin-section that have been downloaded from OlyVIA (Olympus ASW) software via the local server access. The images are acquired in a slide scanner microscope (Olympus VS200). The description is at https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/
 
 See the full documentation of the code in Acevedo Zamora and Kamber (2023) Suplementary material 1. If using part or all the code cite my work in (ACS Style):
