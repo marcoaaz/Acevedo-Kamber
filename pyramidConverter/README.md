@@ -2,9 +2,9 @@ The graphical user interface should be opened from the MatLab script 'combineScr
 
 The figure below shows that:
 
-1. The image pyramid levels that are available in the file are printed in the Command Window for gaining information.
-2. The 'SeriesName' index (in the printed table) should be entered as the 'Max. desired resolution'.
-3. Meanwhile, the multi-pol images to export should be thicked on in the selection menu (top left).
+1. The available image pyramid levels from the *.vsi files (proprietary format) can be read printed in the Command Window.
+2. The 'SeriesName' index (see the printed table) should be entered as the 'Max. desired resolution'.
+3. The multi-pol images to export should be thicked on the selection menu (top left) before clicking the 'Process' button (final step).
 
 Interface:
 <img src="https://github.com/marcoaaz/Acevedo-Kamber/assets/61703106/ca5f53bb-1b5c-46af-8f30-3756231e14cd" width=90% height=90%>
