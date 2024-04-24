@@ -1,10 +1,11 @@
 # Semi-automated mineralogy using optical microscopy and pixel-based classification
-The repository contains the scripts of a petrographic image analysis pipeline (Option A and Option B) that supports whole-slide imaging (multi-gigapixel files) for obtaining modal mineralogy. After acquisition in the [VS200 slide scanner](https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/), the inputs are multi-pol optical scans downloaded with OlyVIA software via the local server access (NIS-SQL). Read the full documentation in Suplementary material 1 of the paper:
+The repository contains the scripts of a petrographic image analysis pipeline that supports whole-slide imaging (multi-gigapixel files) for estimating modal mineralogy. After acquisition in the [VS200 slide scanner](https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/), the inputs are multi-pol optical scans that can be downloaded using OlyVIA software via a local server access (NIS-SQL). Read the full documentation in Suplementary material 1 (see Option A and Option B) of the paper:
 
 **Acevedo Zamora, M.A.; Kamber, B.S. Petrographic Microscopy with Ray Tracing and Segmentation from Multi-Angle Polarisation Whole-Slide Images. ***Minerals*** 2023, 13, 156. https://doi.org/10.3390/min13020156** 
 
-Please, also cite the authors of the open-source software (Bioformats, QuPath, VIPS), who can be contacted at the largest bioinformatics imaging [forum](https://forum.image.sc/). 
+If using our work, please, also cite the authors of the open-source software (Bioformats, QuPath, VIPS), who can be contacted at the largest bioinformatics imaging [forum](https://forum.image.sc/). 
 
+To learn more about how to use an optical slide scanner and manage the data (*.vsi files), visit the YouTube channel [playlist](https://youtube.com/playlist?list=PLWEbcB4Y7NMDP0RLe-xCjUI6ituMyqg7z&si=x1-SwlS9Tcllstiu).
 
 ## Workflow:
 
@@ -60,4 +61,4 @@ Brief description of functionalities:
 
 New users might find difficulties installing the dependencies to run the scripts. Ensure that you locate the paths of the functions outlined above. If there are further issues with the scripts and functions, please raise an issue. A Windows OS machine (with a virtual Linux machine) is required to run the sections of the scripts requiring to call the command line.
 
-Thanks.
+Thank you.
