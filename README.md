@@ -5,6 +5,10 @@ The repository contains the scripts of a petrographic image analysis pipeline th
 
 If using our work, please, also cite the authors of the open-source software (Bioformats, QuPath, VIPS), who can be contacted at the largest bioinformatics imaging [forum](https://forum.image.sc/). 
 
+The original images (*.vsi pyramidal images) can be accessed in the [virtual microscope](https://qutrocks.qut.edu.au/) and accessed using (user ; password): QUTguest_paper1 ; Olympus123
+
+<img src="https://github.com/marcoaaz/Acevedo-Kamber/assets/61703106/73136829-4e22-4d8e-b60d-3b417a371dcd" width=70% height=70%>
+
 To learn more about how to use an optical slide scanner and manage the data (*.vsi files), visit the YouTube channel [playlist](https://youtube.com/playlist?list=PLWEbcB4Y7NMDP0RLe-xCjUI6ituMyqg7z&si=x1-SwlS9Tcllstiu).
 
 ## Workflow:
