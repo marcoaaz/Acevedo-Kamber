@@ -1,7 +1,9 @@
-function [AIM, AIM_pct, access_map] = phasemapAIM(map, radius, connectivity, destinationDir)
+function [AIM, AIM_pct, access_map] = phasemapAIM( ...
+    map, radius, connectivity, destinationDir)
+
+map = double(map);%requirement (line 42)
 
 %define variables
-map = double(map);%requirement (line 42)
 map_rollout = map(:, :); %
 rows = size(map_rollout, 1);
 cols = size(map_rollout, 2);
