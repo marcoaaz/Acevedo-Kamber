@@ -8,27 +8,54 @@ function [PM_RGB] = phasemapCheck(phasemap1, minerals1, triplet1, mineral_target
 % rot_angle: rotation angle for displaying (0, 90, 180, etc.)
 % destinationDir: folder to save outputs
 
-phasemap_modif = phasemap1;
+% phasemap_modif = phasemap1;
+dim = size(phasemap1);
+n_rows_original = dim(1);
+n_cols_original = dim(2);
+
 n_masks = length(minerals1);
 triplet = double(triplet1);
 
 present_temp = ismember(minerals1, mineral_targets);
-n_masks1 = sum(present_temp);
-triplet2 = triplet(present_temp, :);
+% n_masks1 = sum(present_temp);
+n_masks1 = length(mineral_targets);
+triplet2 = zeros(n_masks1, 3);
+for m = 1:n_masks1
+    temp_idx = strcmp(minerals1, mineral_targets{m});
+    temp_triplet = triplet(temp_idx, :);
 
-k = 0;
-for i = 1:n_masks
-    mask_temp = (phasemap1 == i);
-    if present_temp(i) == 1
-        k = k + 1;
-        phasemap_modif(mask_temp) = k;
-    else
-        phasemap_modif(mask_temp) = 0;
-    end
+    triplet2(m, :) = temp_triplet;
 end
-phasemap1 = phasemap_modif;
+% triplet2 = triplet(present_temp, :);
 
-PM_RGB_temp = label2rgb(phasemap1, triplet2, 'k', 'noshuffle'); %convert to RGB
+% k = 0;
+% for i = 1:n_masks
+%     mask_temp = (phasemap1 == i);
+%     if present_temp(i) == 1
+%         k = k + 1;
+%         phasemap_modif(mask_temp) = k;
+%     else
+%         phasemap_modif(mask_temp) = 0;
+%     end
+% end
+% phasemap1 = phasemap_modif;
+
+phasemap_modif = zeros(n_rows_original, n_cols_original, 'uint8');
+phasemap_serial = zeros(n_rows_original, n_cols_original, 'uint8');
+f = 0;
+for k = 1:n_masks1
+    f = f + 1;
+
+    temp_idx = strcmp(minerals1, mineral_targets{k});
+    
+    mask_temp = (phasemap1 == find(temp_idx));    
+    phasemap_modif(mask_temp) = find(temp_idx); %saving target labels   
+    phasemap_serial(mask_temp) = f;
+end
+% phasemap1 = phasemap_modif;
+
+
+PM_RGB_temp = label2rgb(phasemap_serial, triplet2, 'k', 'noshuffle'); %convert to RGB
 PM_RGB = imrotate(PM_RGB_temp, rot_angle); %activate: if section is vertical
 
 %% Plot
@@ -54,6 +81,10 @@ axpos(3) = axpos(3) - decrease_by;
 set(gca, 'position', axpos);
 
 %% save RGB image for registration
+
+imageFile = 'phasemap_target.tif';
+fullDest = fullfile(destinationDir, imageFile); 
+imwrite(phasemap_modif, fullDest, 'Compression', 'none'); %save tif 24-bit
 
 imageFile = 'phasemap_target_RGB.tif';
 fullDest = fullfile(destinationDir, imageFile); 

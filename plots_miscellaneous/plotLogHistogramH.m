@@ -1,7 +1,8 @@
 function plotLogHistogramH(pixelPopulations, PM_names, triplet, destinationDir)
+fontSize = 9;
+text_y_offset = 1.4;
 
 %Horizontal histogram (log10 X-axis)
-
 n_masks = length(pixelPopulations);
 population_pct = 100*pixelPopulations/sum(pixelPopulations);
 
@@ -14,7 +15,7 @@ y = pixelPopulations;
 min_value = 10^floor(log10(min(y)));
 max_value = 10^ceil(log10(max(y)));
 
-fontSize = 9;
+
 handleToThisBarSeries = gobjects(n_masks, 1);
 for i = 1:n_masks
   
@@ -28,8 +29,8 @@ for i = 1:n_masks
   barTopper = sprintf('%0.1f pct', population_pct(i));  
   
 %   text(2*min_value, x(i), barTopper, 'FontSize', fontSize, 'FontWeight','bold', 'BackgroundColor', 'w');%*0.8
-  text(1.2*y(i), x(i), barTopper, ...
-      'FontSize', fontSize, 'FontWeight','bold', 'BackgroundColor', 'w');%*0.8
+  text(text_y_offset*y(i), x(i), barTopper, ...
+      'FontSize', fontSize, 'FontWeight','bold', 'BackgroundColor', 'none');%*0.8
     
   hold on;  
   
@@ -45,13 +46,13 @@ title('Modal mineralogy by Vol.%', 'FontSize', fontSize*1.2);
 xlabel('Population (log-scale)', 'FontSize', fontSize*1.2);
 ylabel('Ranked list', 'FontSize', fontSize*1.2);
 
-lgd = legend(handleToThisBarSeries, PM_names, 'Location', 'southeastoutside', 'interpreter', 'none'); %'southeast'
+lgd = legend(handleToThisBarSeries, PM_names, 'Location', 'eastoutside', 'interpreter', 'none'); %'southeast'
 lgd.NumColumns = 1;
-lgd.FontSize = 9;
+lgd.FontSize = fontSize;
 
 %save figure window
 figure_frame = getframe(gcf);
-fulldest = fullfile(destinationDir, 'mineralogyLogHistogramH.tif'); 
+fulldest = fullfile(destinationDir, 'mineralogyLogHistogram_legendOutside.tif'); 
 imwrite(figure_frame.cdata, fulldest, 'Compression', 'none');
 
 end

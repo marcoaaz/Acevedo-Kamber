@@ -1,19 +1,26 @@
 function plotLogHistogramH2(pixelPopulations, PM_names, triplet, destinationDir)
-
 %Horizontal histogram (log10 X-axis)
 
+%data
 n_masks = length(pixelPopulations);
 population_pct = 100*pixelPopulations/sum(pixelPopulations);
-hz_line_idx = find(population_pct < 1, 1);
-barTopper = compose('%0.1f', population_pct); %sprintf
 
+hz_line_idx = find(population_pct < 1, 1); %
+if isempty(hz_line_idx)
+    hz_line_x = (2*n_masks + 1)/2;
+else    
+    hz_line_x = (2*hz_line_idx- 1)/2;
+end
 
 x = 1:n_masks;
-hz_line_x = (2*hz_line_idx- 1)/2;
 y = pixelPopulations;
+
+%setup
+text1 = 'Rock-forming';
+text2 = 'Accessories';
 min_value = 10^floor(log10(min(y)));
 max_value = 10^ceil(log10(max(y)));
-
+barTopper = compose('%0.1f', population_pct); %sprintf
 fontSize = 9;
 fontColor = 'white';
 handleToThisBarSeries = gobjects(n_masks, 1);
@@ -32,33 +39,40 @@ patch([min_value min_value max_value max_value], ...
 hold on
 patch([min_value min_value max_value max_value], ...
     [0 hz_line_x hz_line_x 0], color_rockForming, 'FaceAlpha', patch_alpha)
+
 for i = 1:n_masks  
-  %Plot one single bar as a separate bar series.
-  handleToThisBarSeries(i) = barh(x(i), y(i), 'BarWidth', 0.9);
-  % Apply the color to this bar series.
-  set(handleToThisBarSeries(i), 'FaceColor', triplet(i,:));
- 
-  % Place text on the bar  
-  txt1= text(1.2*min_value, x(i), PM_names{i}, ...
+  
+    %Plot one single bar as a separate bar series.  
+    handleToThisBarSeries(i) = barh(x(i), y(i), 'BarWidth', 0.9);
+  
+    %bar color  
+    set(handleToThisBarSeries(i), 'FaceColor', triplet(i,:)); 
+  
+    % Place text on the bar    
+    txt1= text(1.2*min_value, x(i), PM_names{i}, ...
       'FontSize', fontSize*1.1, 'interpreter', 'none', ...
       'Color', fontColor, 'FontWeight', 'bold', 'FontSmoothing', 'off');  
 end
 % yline(hz_line_x, '-b', 'Rock-forming above', 'LabelHorizontalAlignment', 'right')
-txt2= text(xy_rockForming(2), xy_rockForming(1), 'Rock-forming', ...
+
+
+txt2= text(xy_rockForming(2), xy_rockForming(1), text1, ...
       'FontSize', fontSize*1.2, 'interpreter', 'none', ...
       'Color', 'b', 'FontWeight', 'bold', 'FontSmoothing', 'off', ...
-      'Rotation', 90, 'HorizontalAlignment','center');
-txt3= text(xy_accessory(2), xy_accessory(1), 'Accessories', ...
+      'Rotation', 270, 'HorizontalAlignment','center'); %90
+txt3= text(xy_accessory(2), xy_accessory(1), text2, ...
       'FontSize', fontSize*1.2, 'interpreter', 'none', ...
       'Color', 'b', 'FontWeight', 'bold', 'FontSmoothing', 'off', ...
-      'Rotation', 90, 'HorizontalAlignment','center');
+      'Rotation', 270, 'HorizontalAlignment','center');
 hold off
 
 xlim([min_value, max_value]); %comfortability
-set(gca, 'XScale', 'log', 'XTick', power(10, 0:10), 'GridAlpha', .3, 'Layer', 'top');
-% xticks(power(10, 0:10), 'Layer', 'top');
-set(gca, 'YDir', 'reverse');
 ylim([0, n_masks+1])
+
+set(gca, 'XScale', 'log', 'XTick', power(10, 0:10), 'GridAlpha', .3, 'Layer', 'top');
+xticks(power(10, 0:10)); %, 'Layer', 'top'
+
+set(gca, 'YDir', 'reverse');
 set(gca, 'ytick', [1:n_masks], 'yticklabel', barTopper, ...
     'XGrid', 'on', 'XMinorGrid', 'off')
 set(gca, 'YAxisLocation', 'right')
@@ -68,7 +82,7 @@ xlabel('Pixel population', 'FontSize', fontSize*1.2);
 
 %save figure window
 figure_frame = getframe(gcf);
-fulldest = fullfile(destinationDir, 'mineralogyLogHistogramH.tif'); 
+fulldest = fullfile(destinationDir, 'mineralogyLogHistogram2.tif'); 
 imwrite(figure_frame.cdata, fulldest, 'Compression', 'none');
 
 end
