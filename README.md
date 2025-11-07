@@ -1,11 +1,20 @@
 # Semi-automated mineralogy using optical microscopy and pixel-based classification
-The repository contains the scripts of a petrographic image analysis pipeline that supports whole-slide imaging (multi-gigapixel files) for estimating modal mineralogy. After acquisition in the [VS200 slide scanner](https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/), the inputs are multi-pol optical scans that can be downloaded using OlyVIA software via a local server access (NIS-SQL). Read the full documentation in Suplementary material 1 (see Option A and Option B) of the paper:
+
+The repository contains the scripts of a petrographic image analysis pipeline that supports whole-slide imaging (multi-gigapixel files) for estimating modal mineralogy. The full documentation can be found in Suplementary material 1 (Option A and Option B) [(Acevedo and Kamber, 2023)](https://doi.org/10.3390/min13020156).
+
+This repository has derived into two new software packages (updated on 7-Nov-25):
+- Cube converter v1 [Link](): convert VS200 polarised microscopy optical images into ray tracing outputs (PPL-max, XPL-max, etc.)
+- Phase interpreter v1 [Link](https://github.com/marcoaaz/phase_interpreter): produce a mineral phase map and perform basic image analysis from the original semantic segmentation
+
+## Citation
 
 **Acevedo Zamora, M.A.; Kamber, B.S. Petrographic Microscopy with Ray Tracing and Segmentation from Multi-Angle Polarisation Whole-Slide Images. ***Minerals*** 2023, 13, 156. https://doi.org/10.3390/min13020156** 
 
-If using our work, please, also cite the authors of the open-source software (Bioformats, QuPath, VIPS), who can be contacted at the largest bioinformatics imaging [forum](https://forum.image.sc/). 
+Please, also cite the authors of the open-source software (Bioformats, QuPath, VIPS), who can be contacted at the largest bioinformatics imaging [forum](https://forum.image.sc/). 
+  
+## Dataset and overview of data acquisition
 
-The original images (*.vsi pyramidal images) can be accessed in the [virtual microscope](https://qutrocks.qut.edu.au/) and accessed using (user ; password): QUTguest_paper1 ; Olympus123
+After acquisition in the [VS200 slide scanner](https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/), the inputs are multi-pol optical scans that can be downloaded using OlyVIA software via a local server access (NIS-SQL). The original images (*.vsi pyramidal images) can be accessed in the [virtual microscope](https://qutrocks.qut.edu.au/) and accessed using (user ; password): QUTguest_paper1 ; Olympus123
 
 <img src="https://github.com/marcoaaz/Acevedo-Kamber/assets/61703106/73136829-4e22-4d8e-b60d-3b417a371dcd" width=70% height=70%>
 
@@ -15,9 +24,7 @@ To learn more about how to use an optical slide scanner and manage the data (*.v
 
 <img src="https://user-images.githubusercontent.com/61703106/213952990-e21d25d1-d3eb-430f-8b87-fbffcbb44cd5.jpg" width=70% height=70%>
 
-
 Opening the QuPath optical mineral phase maps (exported in OME-TIFF) requires [BioFormats MatLab Toolbox](https://www.openmicroscopy.org/bio-formats/downloads/). After download, the folder 'bfmatlab' needs to be extracted and added to the 'path' of the MatLab script 'qupathPhaseMap_v7.m'. Bioformats needs to be downloaded separately since it was not possible to upload the 'bioformats_package.jar' to GitHub since it is >25 MB. If still presenting issues for running the code, send me an email (after carefully reading the paper). Thanks.
-
 
 Brief description of functionalities:
 1. libvips workflow
@@ -63,6 +70,9 @@ Brief description of functionalities:
 
 ## Updates
 
-New users might find difficulties installing the dependencies to run the scripts. Ensure that you locate the paths of the functions outlined above. If there are further issues with the scripts and functions, please raise an issue. A Windows OS machine (with a virtual Linux machine) is required to run the sections of the scripts requiring to call the command line.
+For installation, ensure that you locate the paths of the functions outlined above. If there are further issues with the scripts and functions, please raise an issue. A Windows OS machine (with a virtual Linux machine) is required to run the sections of the scripts requiring to call the command line.
+
+This repository is no longer mantained (see description at the top). 
 
 Thank you.
+Marco
