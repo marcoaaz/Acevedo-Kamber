@@ -3,15 +3,10 @@
 The repository contains the scripts of a petrographic image analysis pipeline that supports whole-slide imaging (multi-gigapixel files) for estimating modal mineralogy. The full documentation can be found in Suplementary material 1 (Option A and Option B) [(Acevedo and Kamber, 2023)](https://doi.org/10.3390/min13020156).
 
 This repository has derived into two new software packages (updated on 7-Nov-25):
-- Cube converter v1 [Link](): convert VS200 polarised microscopy optical images into ray tracing outputs (PPL-max, XPL-max, etc.)
-- Phase interpreter v1 [Link](https://github.com/marcoaaz/phase_interpreter): produce a mineral phase map and perform basic image analysis from the original semantic segmentation
+- [Cube converter](https://github.com/marcoaaz/cube_converter) v1: to convert VS200 polarised microscopy optical images into ray tracing outputs (PPL-max, XPL-max, etc.)
+- [Phase interpreter](https://github.com/marcoaaz/phase_interpreter) v1: to produce a mineral phase map and perform basic image analysis from the original semantic segmentation.
 
-## Citation
-
-**Acevedo Zamora, M.A.; Kamber, B.S. Petrographic Microscopy with Ray Tracing and Segmentation from Multi-Angle Polarisation Whole-Slide Images. ***Minerals*** 2023, 13, 156. https://doi.org/10.3390/min13020156** 
-
-Please, also cite the authors of the open-source software (Bioformats, QuPath, VIPS), who can be contacted at the largest bioinformatics imaging [forum](https://forum.image.sc/). 
-  
+ 
 ## Dataset and overview of data acquisition
 
 After acquisition in the [VS200 slide scanner](https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/), the inputs are multi-pol optical scans that can be downloaded using OlyVIA software via a local server access (NIS-SQL). The original images (*.vsi pyramidal images) can be accessed in the [virtual microscope](https://qutrocks.qut.edu.au/) and accessed using (user ; password): QUTguest_paper1 ; Olympus123
@@ -68,11 +63,19 @@ Brief description of functionalities:
    - plotLogHistogramH2.m = function that follows plotLogHistogramH for plotting modal mineralogy with stacked bar histogram and was reformatted for petrography by Balz K.
    - qupathPhaseMap_v7.m = interprets pixel classification maps from QuPath software in the MatLab environment and performs AIM, granulometry, and a few statistical analysis of the shapes.
 
-## Updates
-
 For installation, ensure that you locate the paths of the functions outlined above. If there are further issues with the scripts and functions, please raise an issue. A Windows OS machine (with a virtual Linux machine) is required to run the sections of the scripts requiring to call the command line.
 
-This repository is no longer mantained (see description at the top). 
+
+## Updates
+
+This repository is no longer mantained (see description at the top). All the functions above were integrated in Cube Converter and Phase Interpreter software.
+
+
+## Citation
+
+**Acevedo Zamora, M.A.; Kamber, B.S. Petrographic Microscopy with Ray Tracing and Segmentation from Multi-Angle Polarisation Whole-Slide Images. ***Minerals*** 2023, 13, 156. https://doi.org/10.3390/min13020156** 
+
+Please, also cite the authors of the open-source software (Bioformats, QuPath, VIPS), who can be contacted at the largest bioinformatics imaging [forum](https://forum.image.sc/). 
 
 Thank you.
 Marco
