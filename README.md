@@ -85,4 +85,7 @@ This repository has derived into two new software packages (updated on 7-Nov-25)
 Please, also cite the authors of the open-source software (Bioformats, QuPath, VIPS), who can be contacted at the largest bioinformatics imaging [forum](https://forum.image.sc/). 
 
 Thank you.
+
+Cordially,
+
 Marco
