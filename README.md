@@ -1,23 +1,26 @@
 # Semi-automated mineralogy using optical microscopy and pixel-based classification
 
-The repository contains the scripts of a petrographic image analysis pipeline that supports whole-slide imaging (multi-gigapixel files) for estimating modal mineralogy. The full documentation can be found in Suplementary material 1 (Option A and Option B) [(Acevedo and Kamber, 2023)](https://doi.org/10.3390/min13020156).
+The repository contains the scripts of a petrographic image analysis pipeline that supports whole-slide imaging (multi-gigapixel files) for estimating modal mineralogy. The full documentation can be found in Suplementary material 1 (Option A and Option B) [(Acevedo and Kamber, 2023)](https://doi.org/10.3390/min13020156). See latest updates at the bottom.
 
-This repository has derived into two new software packages (updated on 7-Nov-25):
-- [Cube converter](https://github.com/marcoaaz/cube_converter) v1: to convert VS200 polarised microscopy optical images into ray tracing outputs (PPL-max, XPL-max, etc.)
-- [Phase interpreter](https://github.com/marcoaaz/phase_interpreter) v1: to produce a mineral phase map and perform basic image analysis from the original semantic segmentation.
 
- 
 ## Dataset and overview of data acquisition
 
 After acquisition in the [VS200 slide scanner](https://www.olympus-lifescience.com/en/solutions-based-systems/vs200/), the inputs are multi-pol optical scans that can be downloaded using OlyVIA software via a local server access (NIS-SQL). The original images (*.vsi pyramidal images) can be accessed in the [virtual microscope](https://qutrocks.qut.edu.au/) and accessed using (user ; password): QUTguest_paper1 ; Olympus123
 
-<img src="https://github.com/marcoaaz/Acevedo-Kamber/assets/61703106/73136829-4e22-4d8e-b60d-3b417a371dcd" width=70% height=70%>
+<p align="center">
+ <img src="https://github.com/marcoaaz/Acevedo-Kamber/assets/61703106/73136829-4e22-4d8e-b60d-3b417a371dcd" width=70% height=70%>
+</p>
 
 To learn more about how to use an optical slide scanner and manage the data (*.vsi files), visit the YouTube channel [playlist](https://youtube.com/playlist?list=PLWEbcB4Y7NMDP0RLe-xCjUI6ituMyqg7z&si=x1-SwlS9Tcllstiu).
 
 ## Workflow:
 
-<img src="https://user-images.githubusercontent.com/61703106/213952990-e21d25d1-d3eb-430f-8b87-fbffcbb44cd5.jpg" width=70% height=70%>
+Follow this workflow:
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/61703106/213952990-e21d25d1-d3eb-430f-8b87-fbffcbb44cd5.jpg" width=60% height=60%>
+</p>
+
 
 Opening the QuPath optical mineral phase maps (exported in OME-TIFF) requires [BioFormats MatLab Toolbox](https://www.openmicroscopy.org/bio-formats/downloads/). After download, the folder 'bfmatlab' needs to be extracted and added to the 'path' of the MatLab script 'qupathPhaseMap_v7.m'. Bioformats needs to be downloaded separately since it was not possible to upload the 'bioformats_package.jar' to GitHub since it is >25 MB. If still presenting issues for running the code, send me an email (after carefully reading the paper). Thanks.
 
@@ -69,6 +72,10 @@ For installation, ensure that you locate the paths of the functions outlined abo
 ## Updates
 
 This repository is no longer mantained (see description at the top). All the functions above were integrated in Cube Converter and Phase Interpreter software.
+
+This repository has derived into two new software packages (updated on 7-Nov-25):
+- [Cube converter](https://github.com/marcoaaz/cube_converter) v1: to convert VS200 polarised microscopy optical images into ray tracing outputs (PPL-max, XPL-max, etc.)
+- [Phase interpreter](https://github.com/marcoaaz/phase_interpreter) v1: to produce a mineral phase map and perform basic image analysis from the original semantic segmentation.
 
 
 ## Citation
